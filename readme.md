@@ -31,14 +31,25 @@ interface Admin extends User {
 - Can use `&` for **intersection types** to combine multiple types.
 
 ```ts
+// Basic type
 type User = {
   name: string;
   age: number;
 };
 
+// Extending a type using intersection
 type Admin = User & {
   role: string;
 };
+
+// Union type
+type Status = "active" | "inactive";
+
+// Tuple type
+type Point = [number, number];
+
+// Primitive alias
+type ID = string | number;
 ```
 
 ---
@@ -125,18 +136,6 @@ In large teams or projects, TypeScript enforces consistency and helps prevent bu
 - Shared interfaces
 - Strict types across modules
 - Dependency safety
-
----
-
-## 6. **Gradual Adoption in JavaScript Projects**
-
-You can rename `.js` files to `.ts` or `.tsx`, and slowly add types without rewriting the whole codebase.
-
-```ts
-function add(a: number, b: number): number {
-  return a + b;
-}
-```
 
 ---
 
